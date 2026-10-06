@@ -1,11 +1,11 @@
 import AppKit
 import SwiftUI
-#if canImport(LlamaMenuCore)
-    import LlamaMenuCore
+#if canImport(LlamaBarCore)
+    import LlamaBarCore
 #endif
 
 @main
-struct LlamaMenuBarApp: App {
+struct LlamaBarApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     @StateObject private var state = AppState()
 
@@ -13,17 +13,17 @@ struct LlamaMenuBarApp: App {
         MenuBarExtra {
             MenuView(state: state).onAppear { delegate.state = state }
         } label: {
-            Image(nsImage: LlamaMenuIcon.image)
+            Image(nsImage: LlamaBarIcon.image)
                 .renderingMode(.template)
-                .accessibilityLabel("Llama Server, \(state.server.state.rawValue)")
-                .help("Llama Server — \(state.server.state.rawValue)")
+                .accessibilityLabel("LlamaBar, \(state.server.state.rawValue)")
+                .help("LlamaBar — \(state.server.state.rawValue)")
         }
         .menuBarExtraStyle(.menu)
-        Window("Llama Server Settings", id: "settings") {
+        Window("LlamaBar Settings", id: "settings") {
             SettingsView(state: state).onAppear { delegate.state = state }
         }
         .defaultSize(width: 820, height: 720)
-        Window("Llama Server Logs", id: "logs") { LogsView(state: state) }
+        Window("LlamaBar Logs", id: "logs") { LogsView(state: state) }
             .defaultSize(width: 820, height: 520)
     }
 }
@@ -128,6 +128,9 @@ struct ServerSummary: View {
 struct MenuView: View {
     @ObservedObject var state: AppState
     @Environment(\.openWindow) private var openWindow
+    private var appVersion: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
+    }
 
     var body: some View {
         Label("Server \(state.server.state.rawValue.lowercased())", systemImage: state.server.state.symbol)
@@ -172,8 +175,8 @@ struct MenuView: View {
         Button("View Logs…") { showWindow("logs") }
         Button("Settings…") { showWindow("settings") }.keyboardShortcut(",")
         Divider()
-        Text("Llama Server 0.0.2")
-        Button("Quit Llama Server") { NSApplication.shared.terminate(nil) }.keyboardShortcut("q")
+        Text("LlamaBar \(appVersion)")
+        Button("Quit LlamaBar") { NSApplication.shared.terminate(nil) }.keyboardShortcut("q")
     }
 
     private func showWindow(_ id: String) {

@@ -2,15 +2,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "LlamaMenuBar",
+    name: "LlamaBar",
     platforms: [.macOS(.v13)],
-    products: [.executable(name: "LlamaMenuBar", targets: ["LlamaMenuBar"])],
+    products: [.executable(name: "LlamaBar", targets: ["LlamaBar"])],
     targets: [
         .target(name: "CProcessSupport"),
-        .target(name: "LlamaMenuCore", dependencies: ["CProcessSupport"]),
-        .executableTarget(name: "LlamaMenuBar", dependencies: ["LlamaMenuCore"]),
+        .target(name: "LlamaBarCore", dependencies: ["CProcessSupport"]),
+        .executableTarget(name: "LlamaBar", dependencies: ["LlamaBarCore"]),
         .testTarget(
-            name: "LlamaMenuCoreTests", dependencies: ["LlamaMenuCore"],
+            name: "LlamaBarCoreTests", dependencies: ["LlamaBarCore"],
             resources: [.copy("Fixtures")]),
     ]
 )

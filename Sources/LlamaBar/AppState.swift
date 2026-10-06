@@ -1,8 +1,8 @@
 import AppKit
 import Combine
 import Foundation
-#if canImport(LlamaMenuCore)
-    import LlamaMenuCore
+#if canImport(LlamaBarCore)
+    import LlamaBarCore
 #endif
 
 @MainActor

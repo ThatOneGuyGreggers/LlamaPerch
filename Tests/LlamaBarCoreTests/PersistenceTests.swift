@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
-#if canImport(LlamaMenuCore)
-    @testable import LlamaMenuCore
+#if canImport(LlamaBarCore)
+    @testable import LlamaBarCore
 #endif
 
 final class PersistenceTests: XCTestCase {

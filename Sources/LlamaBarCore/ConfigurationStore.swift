@@ -8,6 +8,7 @@ public actor ConfigurationStore {
 
     public init(url: URL) { self.url = url }
 
+    // Preserve the established location so the rename retains existing model profiles.
     public static var defaultURL: URL {
         FileManager.default.homeDirectoryForCurrentUser
             .appendingPathComponent("Library/Application Support/LlamaMenuBar/settings.json")

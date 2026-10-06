@@ -1,8 +1,8 @@
 import AppKit
 import SwiftUI
 import UniformTypeIdentifiers
-#if canImport(LlamaMenuCore)
-    import LlamaMenuCore
+#if canImport(LlamaBarCore)
+    import LlamaBarCore
 #endif
 
 enum SettingsPane: Hashable { case general, models }

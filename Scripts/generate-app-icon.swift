@@ -108,7 +108,7 @@ struct AppIconGenerator {
         context.translateBy(x: 210, y: 100)
         context.scaleBy(x: 24, y: 24)
         color(255, 247, 231).setFill()
-        LlamaMenuIcon.silhouette().fill()
+        LlamaBarIcon.silhouette().fill()
     }
 
     private static func gradient(

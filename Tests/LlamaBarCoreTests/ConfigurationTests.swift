@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
-#if canImport(LlamaMenuCore)
-    @testable import LlamaMenuCore
+#if canImport(LlamaBarCore)
+    @testable import LlamaBarCore
 #endif
 
 final class ConfigurationTests: XCTestCase {
@@ -117,7 +117,7 @@ final class ConfigurationTests: XCTestCase {
 
 enum TestFiles {
     static func folder() throws -> URL {
-        let folder = FileManager.default.temporaryDirectory.appendingPathComponent("LlamaMenuTests-\(UUID())")
+        let folder = FileManager.default.temporaryDirectory.appendingPathComponent("LlamaBarTests-\(UUID())")
         try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
         return folder
     }

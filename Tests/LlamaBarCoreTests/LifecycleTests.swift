@@ -1,8 +1,8 @@
 import Darwin
 import Foundation
 import XCTest
-#if canImport(LlamaMenuCore)
-    @testable import LlamaMenuCore
+#if canImport(LlamaBarCore)
+    @testable import LlamaBarCore
 #endif
 #if canImport(CProcessSupport)
     import CProcessSupport

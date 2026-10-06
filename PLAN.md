@@ -1,6 +1,6 @@
-# Llama.cpp macOS Menu Bar App — Plan
+# LlamaBar — Build Plan
 
-**Status:** version 0.0.2 implements the design update; Intel builds and automated checks pass. Version 0.0.1 real-model smoke tests remain the inference baseline. Updated October 5, 2026.
+**Status:** version 0.0.3 adopts the LlamaBar name; version 0.0.2 implements the design update; Intel builds and automated checks pass. Version 0.0.1 real-model smoke tests remain the inference baseline. Updated October 5, 2026.
 
 Build a native menu bar app that lets users choose a local GGUF model, start a llama.cpp server, see its status, and stop or switch models without a terminal. The controller works with real local models; the initial CPU timings below are smoke-test observations, with broader performance tuning still pending.
 
@@ -132,8 +132,10 @@ Use bounded fixture processes and mock health endpoints for routine tests; add m
 - **Automated:** argument bounds and Unicode/space-containing paths; CPU defaults and clean environment; persistence round trips, schemas, damaged/oversized data; delayed readiness, exit, cancellation, timeouts, ignored termination, log overflow/partial lines, stale callbacks, rapid actions, failed switches, and competing listeners. Verify only one managed child and unaffected unrelated processes.
 - **On hardware:** real API output and two-model switching; stop during startup, repeated restart, quit while running; missing/unreadable/invalid models and executables, insufficient memory, port conflicts, unexpected exit; relaunch without auto-start; sleep/wake, keyboard/VoiceOver, and light/dark appearance.
 
-**Next action:** try the packaged 0.0.2 workflow in the menu bar and complete the remaining manual acceptance checks before wider distribution.
+**Next action:** try the packaged LlamaBar 0.0.3 workflow in the menu bar and complete the remaining manual acceptance checks before wider distribution.
 
 ## Sources
 
 Review references: [Apple MenuBarExtra](https://developer.apple.com/documentation/swiftui/menubarextra), [Ventura compatibility](https://support.apple.com/en-us/102861), [Early 2015 MacBook Air specifications](https://support.apple.com/en-us/111956), [llama.cpp CPU/Metal build guide](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md), and [server CLI/health documentation](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md). Upstream links track development; verify them against the selected build.
+
+The project, app, Xcode/Swift targets, and GitHub repository now use LlamaBar. Version 0.0.3 preserves the prior bundle identifier and settings directory for compatibility. See [CHANGELOG.md](CHANGELOG.md) for the complete history.

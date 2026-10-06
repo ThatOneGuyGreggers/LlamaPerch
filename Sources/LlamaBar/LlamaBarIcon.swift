@@ -3,7 +3,7 @@ import AppKit
 /// A vector template preserves a sharp silhouette at either menu bar display scale.
 /// macOS supplies its color for light, dark, and selected menu bar appearances.
 @MainActor
-enum LlamaMenuIcon {
+enum LlamaBarIcon {
     static let image: NSImage = {
         let image = NSImage(size: NSSize(width: 22, height: 20), flipped: true) { _ in
             guard let context = NSGraphicsContext.current?.cgContext else { return false }
