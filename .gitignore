@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+
+# Xcode and Swift build output
+build/
+DerivedData/
+.build/
+xcuserdata/
+*.xcuserstate
+
+# Local configuration and diagnostics
+.env
+.env.*
+!.env.example
+*.log
+
+# Local model weights and server binaries
+*.gguf
+*.ggml
+llama-server
+
+# Signing material
+*.p12
+*.mobileprovision
+*.provisionprofile
