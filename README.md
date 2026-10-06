@@ -27,6 +27,10 @@ open build/LlamaPerch.app
 
 [Setup & troubleshooting](docs/SETUP.md) · [Changelog](CHANGELOG.md) · [Wiki](https://github.com/ThatOneGuyGreggers/LlamaPerch/wiki) · [Build plan](PLAN.md)
 
+## License
+
+LlamaPerch is licensed under the [MIT License](LICENSE).
+
 ---
 
 **Development disclosure:** This project was generated using ChatGPT 6.1 Sol in Visual Studio Code using the Codex Plugin.
