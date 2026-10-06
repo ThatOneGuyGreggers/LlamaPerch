@@ -1,8 +1,8 @@
 import Darwin
 import Foundation
 import XCTest
-#if canImport(LlamaBarCore)
-    @testable import LlamaBarCore
+#if canImport(LlamaPerchCore)
+    @testable import LlamaPerchCore
 #endif
 #if canImport(CProcessSupport)
     import CProcessSupport
@@ -21,8 +21,13 @@ final class LifecycleTests: XCTestCase {
         settings.executable = executable.path
         settings.startupTimeout = 10
         settings.shutdownTimeout = 1
-        // Pick an unused candidate; production launch still checks for a racing listener.
-        settings.port = try XCTUnwrap((19080..<19180).first { llama_check_port(UInt16($0)) == 0 })
+        // Give SwiftPM and native Xcode fixtures separate bands when both suites run together.
+        #if SWIFT_PACKAGE
+            let candidates = 19080..<19180
+        #else
+            let candidates = 21080..<21180
+        #endif
+        settings.port = try XCTUnwrap(candidates.first { llama_check_port(UInt16($0)) == 0 })
         let profile = ModelProfile(name: mode, path: model.path)
         settings.profiles = [profile]
         settings.selectedID = profile.id

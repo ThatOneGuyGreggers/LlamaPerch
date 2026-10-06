@@ -1,11 +1,11 @@
 import AppKit
 import SwiftUI
-#if canImport(LlamaBarCore)
-    import LlamaBarCore
+#if canImport(LlamaPerchCore)
+    import LlamaPerchCore
 #endif
 
 @main
-struct LlamaBarApp: App {
+struct LlamaPerchApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     @StateObject private var state = AppState()
 
@@ -13,17 +13,17 @@ struct LlamaBarApp: App {
         MenuBarExtra {
             MenuView(state: state).onAppear { delegate.state = state }
         } label: {
-            Image(nsImage: LlamaBarIcon.image)
+            Image(nsImage: LlamaPerchIcon.image)
                 .renderingMode(.template)
-                .accessibilityLabel("LlamaBar, \(state.server.state.rawValue)")
-                .help("LlamaBar — \(state.server.state.rawValue)")
+                .accessibilityLabel("LlamaPerch, \(state.server.state.rawValue)")
+                .help("LlamaPerch — \(state.server.state.rawValue)")
         }
         .menuBarExtraStyle(.menu)
-        Window("LlamaBar Settings", id: "settings") {
+        Window("LlamaPerch Settings", id: "settings") {
             SettingsView(state: state).onAppear { delegate.state = state }
         }
         .defaultSize(width: 820, height: 720)
-        Window("LlamaBar Logs", id: "logs") { LogsView(state: state) }
+        Window("LlamaPerch Logs", id: "logs") { LogsView(state: state) }
             .defaultSize(width: 820, height: 520)
     }
 }
@@ -175,8 +175,8 @@ struct MenuView: View {
         Button("View Logs…") { showWindow("logs") }
         Button("Settings…") { showWindow("settings") }.keyboardShortcut(",")
         Divider()
-        Text("LlamaBar \(appVersion)")
-        Button("Quit LlamaBar") { NSApplication.shared.terminate(nil) }.keyboardShortcut("q")
+        Text("LlamaPerch \(appVersion)")
+        Button("Quit LlamaPerch") { NSApplication.shared.terminate(nil) }.keyboardShortcut("q")
     }
 
     private func showWindow(_ id: String) {

@@ -1,4 +1,4 @@
-# LlamaBar setup and development
+# LlamaPerch setup and development
 
 A native macOS menu bar app for starting a local `llama-server`, managing GGUF profiles, and switching models. Intel (`x86_64`) first; macOS 13 or later.
 
@@ -8,12 +8,12 @@ Requires full Xcode with its command line tools. No third-party Swift packages a
 
 ```sh
 ./Scripts/build.sh
-open build/LlamaBar.app
+open build/LlamaPerch.app
 ```
 
-The script uses `/Applications/Xcode.app` when present, without changing your system's developer-tool selection. Set `DEVELOPER_DIR` if Xcode is elsewhere. The output is a locally ad-hoc signed development app plus `build/LlamaBar-0.0.3-macOS-Intel.zip`; Developer ID signing and notarization are pending. To avoid Desktop file-provider metadata invalidating the signature, `build/LlamaBar.app` links to the signed bundle in `/private/tmp`. Rebuild if that temporary bundle is removed, or use the ZIP for a durable copy.
+The script uses `/Applications/Xcode.app` when present, without changing your system's developer-tool selection. Set `DEVELOPER_DIR` if Xcode is elsewhere. The output is a locally ad-hoc signed development app plus `build/LlamaPerch-0.0.4-macOS-Intel.zip`; Developer ID signing and notarization are pending. To avoid Desktop file-provider metadata invalidating the signature, `build/LlamaPerch.app` links to the signed bundle in `/private/tmp`. Rebuild if that temporary bundle is removed, or use the ZIP for a durable copy.
 
-You can also open `LlamaBar.xcodeproj`, select the shared **LlamaBar** scheme, and run it. The Swift package provides a second build/test route; the Xcode project creates the `.app` bundle.
+You can also open `LlamaPerch.xcodeproj`, select the shared **LlamaPerch** scheme, and run it. The Swift package provides a second build/test route; the Xcode project creates the `.app` bundle.
 
 ## Set up a server
 

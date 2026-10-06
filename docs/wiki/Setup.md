@@ -1,4 +1,4 @@
-# LlamaBar setup and development
+# LlamaPerch setup and development
 
 A native macOS menu bar app for starting a local `llama-server`, managing GGUF profiles, and switching models. Intel (`x86_64`) first; macOS 13 or later.
 
@@ -8,12 +8,12 @@ Requires full Xcode with its command line tools. No third-party Swift packages a
 
 ```sh
 ./Scripts/build.sh
-open build/LlamaBar.app
+open build/LlamaPerch.app
 ```
 
-The script uses `/Applications/Xcode.app` when present, without changing your system's developer-tool selection. Set `DEVELOPER_DIR` if Xcode is elsewhere. The output is a locally ad-hoc signed development app plus `build/LlamaBar-0.0.3-macOS-Intel.zip`; Developer ID signing and notarization are pending. To avoid Desktop file-provider metadata invalidating the signature, `build/LlamaBar.app` links to the signed bundle in `/private/tmp`. Rebuild if that temporary bundle is removed, or use the ZIP for a durable copy.
+The script uses `/Applications/Xcode.app` when present, without changing your system's developer-tool selection. Set `DEVELOPER_DIR` if Xcode is elsewhere. The output is a locally ad-hoc signed development app plus `build/LlamaPerch-0.0.4-macOS-Intel.zip`; Developer ID signing and notarization are pending. To avoid Desktop file-provider metadata invalidating the signature, `build/LlamaPerch.app` links to the signed bundle in `/private/tmp`. Rebuild if that temporary bundle is removed, or use the ZIP for a durable copy.
 
-You can also open `LlamaBar.xcodeproj`, select the shared **LlamaBar** scheme, and run it. The Swift package provides a second build/test route; the Xcode project creates the `.app` bundle.
+You can also open `LlamaPerch.xcodeproj`, select the shared **LlamaPerch** scheme, and run it. The Swift package provides a second build/test route; the Xcode project creates the `.app` bundle.
 
 ## Set up a server
 
@@ -46,7 +46,7 @@ Settings live in `~/Library/Application Support/LlamaMenuBar/settings.json`. Mal
 ./Scripts/format.sh --check
 ```
 
-Lifecycle tests start local fixture servers and need loopback/socket-inspection access. They cover delayed readiness, repeated start/stop, cancellation, port conflicts, forced termination, oversized health replies, logs, and damaged persistence. Version 0.0.2 passed 17 tests in both Swift and Xcode suites, with the real-model test skipped by default. Native General/Models layouts were inspected in light and dark appearance. VoiceOver and full keyboard interaction still need manual acceptance. The 0.0.1 real-model completion/restart checks passed with cached Granite 350M BF16 and your Granite 4.2 3B Q4_K_M model; see the measured results in [PLAN.md](https://github.com/ThatOneGuyGreggers/LlamaBar/blob/main/PLAN.md). The real-model test is skipped unless explicitly enabled:
+Lifecycle tests start local fixture servers and need loopback/socket-inspection access. They cover delayed readiness, repeated start/stop, cancellation, port conflicts, forced termination, oversized health replies, logs, and damaged persistence. Version 0.0.2 passed 17 tests in both Swift and Xcode suites, with the real-model test skipped by default. Native General/Models layouts were inspected in light and dark appearance. VoiceOver and full keyboard interaction still need manual acceptance. The 0.0.1 real-model completion/restart checks passed with cached Granite 350M BF16 and your Granite 4.2 3B Q4_K_M model; see the measured results in [PLAN.md](https://github.com/ThatOneGuyGreggers/LlamaPerch/blob/main/PLAN.md). The real-model test is skipped unless explicitly enabled:
 
 ```sh
 LLAMA_SMOKE_MODEL="/absolute/path/to/model.gguf" \
@@ -60,7 +60,7 @@ This performs an eight-token OpenAI-compatible completion and a second start/sto
 
 The bundle identifier and legacy Application Support directory are retained so existing settings survive the rename.
 
-The menu bar uses a monochrome llama template. The launcher combines the same llama silhouette with a server stack on a navy tile. The native macOS icon is bundled as `AppIcon.icns`; its 1024-pixel preview is [AppIcon.png](https://github.com/ThatOneGuyGreggers/LlamaBar/blob/main/Resources/Icons/AppIcon.png).
+The menu bar uses a monochrome llama template. The launcher combines the same llama silhouette with a server stack on a navy tile. The native macOS icon is bundled as `AppIcon.icns`; its 1024-pixel preview is [AppIcon.png](https://github.com/ThatOneGuyGreggers/LlamaPerch/blob/main/Resources/Icons/AppIcon.png).
 
 To regenerate the launcher assets from the shared vector mark:
 
@@ -78,4 +78,4 @@ Existing 0.0.1 settings remain compatible; the persistence schema is unchanged.
 
 Single local server, single-file GGUF, CPU inference, and no automatic startup. Apple Silicon, GPU controls, downloads, bundled server binaries, and detached operation are deferred. Full accessibility, sleep/wake, and release-signing acceptance remain manual checks.
 
-See [PLAN.md](https://github.com/ThatOneGuyGreggers/LlamaBar/blob/main/PLAN.md) for the consolidated plan and acceptance criteria, and [AI Coding Guidelines.md](https://github.com/ThatOneGuyGreggers/LlamaBar/blob/main/AI%20Coding%20Guidelines.md) for the coding rules.
+See [PLAN.md](https://github.com/ThatOneGuyGreggers/LlamaPerch/blob/main/PLAN.md) for the consolidated plan and acceptance criteria, and [AI Coding Guidelines.md](https://github.com/ThatOneGuyGreggers/LlamaPerch/blob/main/AI%20Coding%20Guidelines.md) for the coding rules.

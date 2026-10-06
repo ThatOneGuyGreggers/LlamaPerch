@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
-#if canImport(LlamaBarCore)
-    @testable import LlamaBarCore
+#if canImport(LlamaPerchCore)
+    @testable import LlamaPerchCore
 #endif
 
 final class PersistenceTests: XCTestCase {

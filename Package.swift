@@ -2,15 +2,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "LlamaBar",
+    name: "LlamaPerch",
     platforms: [.macOS(.v13)],
-    products: [.executable(name: "LlamaBar", targets: ["LlamaBar"])],
+    products: [.executable(name: "LlamaPerch", targets: ["LlamaPerch"])],
     targets: [
         .target(name: "CProcessSupport"),
-        .target(name: "LlamaBarCore", dependencies: ["CProcessSupport"]),
-        .executableTarget(name: "LlamaBar", dependencies: ["LlamaBarCore"]),
+        .target(name: "LlamaPerchCore", dependencies: ["CProcessSupport"]),
+        .executableTarget(name: "LlamaPerch", dependencies: ["LlamaPerchCore"]),
         .testTarget(
-            name: "LlamaBarCoreTests", dependencies: ["LlamaBarCore"],
+            name: "LlamaPerchCoreTests", dependencies: ["LlamaPerchCore"],
             resources: [.copy("Fixtures")]),
     ]
 )

@@ -85,7 +85,7 @@ final class PipeReader: @unchecked Sendable {
 
     init(buffer: LogBuffer, channel: String) {
         self.buffer = buffer
-        queue = DispatchQueue(label: "LlamaBar.pipe.\(channel).\(UUID())")
+        queue = DispatchQueue(label: "LlamaPerch.pipe.\(channel).\(UUID())")
         queue.async { [self] in
             defer { finished.lock(); ended = true; finished.unlock() }
             defer {

@@ -1,6 +1,16 @@
-# LlamaBar changelog
+# LlamaPerch changelog
 
-All work so far is recorded here and in the [GitHub wiki](https://github.com/ThatOneGuyGreggers/LlamaBar/wiki/Changelog). Dates use America/Chicago.
+All work so far is recorded here and in the [GitHub wiki](https://github.com/ThatOneGuyGreggers/LlamaPerch/wiki/Changelog). Dates use America/Chicago.
+
+## 0.0.4 — A new perch · October 5, 2026
+
+- Adopt LlamaPerch after finding another local-AI project named LlamaBar.
+- Rename the app, executable, Swift/Xcode targets, project folder, and GitHub repository.
+- Update current README, setup, wiki, and download links; keep the development disclosure.
+- Retain the existing bundle identifier and settings location so saved profiles remain compatible.
+- Preserve the llama artwork, historical source tags, and 0.0.2/0.0.3 release archives.
+- Isolate SwiftPM build caches and separate Swift/Xcode fixture port ranges after relocation exposed locked cache folders and concurrent-test contention.
+- Publish the verified LlamaPerch Intel development build with a SHA-256 checksum.
 
 ## 0.0.3 — LlamaBar gets its name · October 5, 2026
 

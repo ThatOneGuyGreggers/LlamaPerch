@@ -1,8 +1,8 @@
 import AppKit
 import SwiftUI
 import UniformTypeIdentifiers
-#if canImport(LlamaBarCore)
-    import LlamaBarCore
+#if canImport(LlamaPerchCore)
+    import LlamaPerchCore
 #endif
 
 enum SettingsPane: Hashable { case general, models }

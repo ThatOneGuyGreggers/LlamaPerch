@@ -1,14 +1,14 @@
-<p align="center"><img src="Resources/Icons/AppIcon.png" width="128" alt="LlamaBar: a llama standing on a server stack"></p>
+<p align="center"><img src="Resources/Icons/AppIcon.png" width="128" alt="LlamaPerch: a llama standing on a server stack"></p>
 
-# LlamaBar 🦙
+# LlamaPerch 🦙
 
-**Local models. One little menu bar llama.**
+**Your local models, perched in the menu bar.**
 
 Start your llama.cpp server, switch GGUF models, peek at logs, and copy your API address—without juggling terminal windows.
 
 ## Get your llama running
 
-1. [Download the latest release](https://github.com/ThatOneGuyGreggers/LlamaBar/releases/tag/v0.0.3) and unzip **LlamaBar.app**.
+1. [Download the latest release](https://github.com/ThatOneGuyGreggers/LlamaPerch/releases/tag/v0.0.4) and unzip **LlamaPerch.app**.
 2. Open **Settings…**, choose your installed `llama-server`, and add a local GGUF in **Models**.
 3. Save, hit **Start Server**, and wait for **Running**. You're ready to connect your favorite client.
 
@@ -22,10 +22,10 @@ With full Xcode installed:
 
 ```sh
 ./Scripts/build.sh
-open build/LlamaBar.app
+open build/LlamaPerch.app
 ```
 
-[Setup & troubleshooting](docs/SETUP.md) · [Changelog](CHANGELOG.md) · [Wiki](https://github.com/ThatOneGuyGreggers/LlamaBar/wiki) · [Build plan](PLAN.md)
+[Setup & troubleshooting](docs/SETUP.md) · [Changelog](CHANGELOG.md) · [Wiki](https://github.com/ThatOneGuyGreggers/LlamaPerch/wiki) · [Build plan](PLAN.md)
 
 ---
 

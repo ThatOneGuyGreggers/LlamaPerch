@@ -22,7 +22,7 @@ Both existing cached models served an eight-token OpenAI-compatible completion, 
 | Granite 4.0 350M BF16 | 7.7 seconds | 15.3 seconds | 1.96 tokens/second |
 | Granite 4.2 3B Q4_K_M | 29.3 seconds | 55.9 seconds | 0.17 tokens/second |
 
-These are smoke observations from 0.0.1, not isolated benchmarks. Another existing server was consuming CPU; it was left untouched. No models were downloaded. Provenance, checksums, and exact settings are recorded in the [build plan](https://github.com/ThatOneGuyGreggers/LlamaBar/blob/main/PLAN.md).
+These are smoke observations from 0.0.1, not isolated benchmarks. Another existing server was consuming CPU; it was left untouched. No models were downloaded. Provenance, checksums, and exact settings are recorded in the [build plan](https://github.com/ThatOneGuyGreggers/LlamaPerch/blob/main/PLAN.md).
 
 ## Native interface and packaging
 
@@ -36,4 +36,8 @@ VoiceOver, complete keyboard-only operation, quit dialogs during real use, sleep
 
 ## Rename compatibility
 
-LlamaBar 0.0.3 retains the prior bundle identifier and `~/Library/Application Support/LlamaMenuBar/settings.json`. Existing profiles remain readable; no settings migration or model-file moves are performed.
+LlamaPerch 0.0.4 retains the prior bundle identifier and `~/Library/Application Support/LlamaMenuBar/settings.json`. Existing profiles remain readable; no settings migration or model-file moves are performed.
+
+## LlamaPerch 0.0.4
+
+The second rebrand keeps historical releases intact and preserves the same storage/schema compatibility. The renamed Swift and native Xcode suites each passed 17 tests with zero failures and one opt-in real-model test skipped. SwiftPM uses an isolated build cache, and the two fixture suites use separate localhost port ranges. The LlamaPerch 0.0.4 x86_64 app archive and ad-hoc signature were verified before publication.

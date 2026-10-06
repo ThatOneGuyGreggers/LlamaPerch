@@ -1,8 +1,8 @@
 import AppKit
 import Combine
 import Foundation
-#if canImport(LlamaBarCore)
-    import LlamaBarCore
+#if canImport(LlamaPerchCore)
+    import LlamaPerchCore
 #endif
 
 @MainActor
